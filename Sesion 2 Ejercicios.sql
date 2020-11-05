@@ -25,6 +25,5 @@ SELECT customerNumber,checkNumber,amount FROM payments WHERE amount>(SELECT avg(
 SELECT customerName FROM customers WHERE customerNumber NOT IN (SELECT customerName FROM orders GROUP BY customerName);
 #13
 SELECT max(total),min(total),avg(total) FROM (SELECT sum(quantityOrdered) AS total FROM orderdetails GROUP BY orderNumber) AS orderTotal;
-# Falta ejercicio 14
-SELECT state FROM customers GROUP BY state;
-SELECT customerNumber,count(*) AS total FROM orders GROUP BY customerNumber;
+#14
+SELECT status,count(*) FROM orders GROUP BY status;
